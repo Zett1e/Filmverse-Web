@@ -1,0 +1,24 @@
+.list-item-container {
+  display: flex;
+
+  .list-item {
+    height: 36rem;
+    // margin-right: 3rem;
+    
+     .title {
+      // margin-right: 2rem;
+      font-size: 2rem;
+      font-weight: 300;
+      text-align: center;
+     }
+
+    &-img {
+      min-width: 20rem;
+      height: 30rem;
+      margin-right: 2rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 10px rgba(0, 0, 0,0.2);
+    }
+  }
+}

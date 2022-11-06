@@ -1,0 +1,50 @@
+.list {
+  margin-left: 3.5rem;
+  margin-top: 5rem;
+  overflow: hidden;
+
+  .list_wrapper {
+    position: relative;
+
+    // &:hover .arrow {
+    //   display: none;
+      
+    // }
+
+    .arrow {
+      width: 5rem;
+      height: 28.3rem;
+      background-color: rgba(22, 22, 22, 0.4);
+      color: rgb(255, 255, 255, 0.8);
+      position: absolute;
+      z-index: 99;
+      transition: all .1s;
+
+      &:hover {
+        background-color: rgba(22, 22, 22, 0.5);
+        color: rgb(255, 255, 255);
+      }
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      top: 0;
+      right: 0;
+    }
+
+    .list_container {
+      margin: 0 30px;
+      transition: all .8s ease;
+    }
+  }
+
+  .genre-title {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+  }
+}
