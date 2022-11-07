@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
     <div className="main">
 
-        <Header></Header>
-        <Routers></Routers>
-        <Footer></Footer>
+        
+        <Routers/>
+        {/* <Footer/> */}
     </div>
     </BrowserRouter>
   );

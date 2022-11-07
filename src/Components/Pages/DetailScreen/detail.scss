@@ -1,0 +1,48 @@
+.backdrop-container {
+    height: 90vh;
+    
+}
+
+.backdrop {
+    object-fit: cover;  
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    height: 4rem;
+    position: absolute;
+    left: 5rem;
+    top: 1rem;
+    
+}
+
+.content-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(to top, black,transparent);
+}
+
+.content {
+    padding: 5rem 5rem;
+    letter-spacing: 2px;
+    width: 60%;
+
+    h1{
+        font-family: 'Anton', sans-serif;
+        font-weight: 400;
+        font-size: 3rem;
+    }
+}
+
+.overview {
+    margin-top: 2rem;
+
+    p{
+        font-size: 1.6rem;
+        color: #ccc;
+    }
+}

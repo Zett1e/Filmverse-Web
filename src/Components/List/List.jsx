@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./list.scss";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { useRef } from "react";
-import axios from "axios";
-import noimage from "../../images/NoImage.png";
 import "./listItem.scss";
 import Api from "../../Api";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useNavigate } from "react-router-dom";
 
-function List({ title, id }) {
-  const [slideNumber, setSlideNumber] = useState(0);
+function List({ title, id, type }) {
   const [movie, setMovie] = useState([]);
   const poster = "https://image.tmdb.org/t/p/original";
+  const navigate = useNavigate();
+  let url;
+
+  if (type === "movie") {
+    url = `/genre/${id}/movies`;
+  } else {
+    url = "/tv/popular";
+  }
 
   const api = () => {
-    Api.get(`/genre/${id}/movies`)
+    Api.get(url)
       .then((res) => {
         setMovie(res.data.results);
       })
@@ -67,25 +70,25 @@ function List({ title, id }) {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -96,8 +99,15 @@ function List({ title, id }) {
           <Slider {...settings}>
             {movie.map((data) => {
               return (
-                <div className="list-item-container">
-                  <div className="list-item" key={data.id}>
+                <div className="list-item-container" key={data.id}>
+                  <div
+                    className="list-item"
+                    onClick={() => {
+                      navigate("detail", {
+                        state: { id: data.id, type: type },
+                      });
+                    }}
+                  >
                     <div className="list-item-img">
                       <img
                         className="w-100 h-100"

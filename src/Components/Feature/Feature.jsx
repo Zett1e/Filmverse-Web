@@ -3,33 +3,19 @@ import "./feature.scss";
 import noimage from "../../images/NoImage.png";
 import Api from "../../Api";
 import Genres from "../Genre";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Feature() {
   const movie = Math.floor(Math.random() * 20);
-  // const index = Math.floor(Math.random() * 26);
-  // const api = `https://api.jikan.moe/v4/anime?sfw=false&page=${page}`;
-
-  // const [anime, setAnime] = useState({
-  //   images: {
-  //     jpg: {
-  //       large_image_url: ""
-  //     }
-  //   },
-  //   genres: [],
-  //   synopsis: ""
-  // });
-
-  // const [title, setTitle] = useState("");
 
   const [trending, setTrending] = useState([]);
   const poster = "https://image.tmdb.org/t/p/original";
+  const navigate = useNavigate();
 
   const api = () => {
     Api.get("/trending/all/day")
       .then((res) => {
         setTrending(res.data.results);
-        // console.log(res.data.results);
       })
       .catch((err) => {
         console.log(err);
@@ -40,23 +26,24 @@ function Feature() {
     api();
   }, []);
 
-  // console.log(trending[0]);
-
-  // return(
-  //   <div>
-  //     {trending[0]?.title}
-  //   </div>
-  // )
   return (
     <div className="hero ">
       <div className="row">
         <div className="col-6">
           <div className="description">
-            <div className="title p-2">
+            <div
+              onClick={() => {
+                navigate("detail", {
+                  state: { id: trending[movie].id, type: "movie" },
+                });
+              }}
+              className="title p-2"
+            >
               {trending[movie]?.title
                 ? trending[movie].title
                 : trending[movie]?.name}
             </div>
+
             {trending[movie]?.genre_ids.map((id, i) => {
               return (
                 <span key={i} className="genre p-2">
@@ -64,19 +51,17 @@ function Feature() {
                 </span>
               );
             })}
-            <div className="synopsis p-2">
-              {trending[movie]?.overview}
-              {/* {isSeemore
-                ? synopsis && synopsis.slice(0, 200)
-                : synopsis && synopsis}
-                {isSeemore ? <span onClick={seeMoreHandler} className="seemore"> See More</span> : "See Less" } */}
-            </div>
+            <div className="synopsis p-2">{trending[movie]?.overview}</div>
           </div>
         </div>
 
         <div className="col-6">
-          {/* <img className="poster" src={ poster + trending.poster_path } alt="Movie Poster" /> */}
-          <div>
+          <div
+            onClick={() => {
+              navigate("detail", { state: { id: trending[movie.id] } });
+            }}
+            style={{ cursor: "pointer" }}
+          >
             {trending[movie]?.poster_path ? (
               <img
                 className="poster"
