@@ -29,7 +29,7 @@ function Detail() {
 
   return (
     <div style={{ position: "relative" }}>
-      <Link to="/">
+      <Link to="/" preventScrollReset={true}>
         <img className="logo" src={logo} alt="Logo" />
       </Link>
       <div className="backdrop-container">
@@ -44,18 +44,22 @@ function Detail() {
           <h1 className="mb-4">{movie?.title ? movie?.title : movie?.name}</h1>
           <div>
             <StarIcon sx={{ color: "yellow" }} style={{ marginTop: "-5px" }} />
-            <span style={{ fontSize: "13px", fontWeight: "bold" }}>
+            <span style={{ color: "#fff", fontWeight: "bold" }}>
               {" "}
               {movie?.vote_average.toPrecision(2)}{" "}
             </span>
             &emsp; &emsp;
-            <span style={{ fontSize: "13px", color: "#ccc" }}>
-              {Math.trunc(movie?.runtime / 60)}hr
-              {movie?.runtime % 60}min &#8728;
-              {movie?.genres.map(({ id, name }) => (
-                <span key={id}>{" " + name + "  "} </span>
-              ))}
-              &#8728;
+            {movie?.runtime && (
+              <span>
+                {Math.trunc(movie?.runtime / 60)}hr
+                {movie?.runtime % 60}min &#8728;
+              </span>
+            )}
+            {movie?.genres.map(({ id, name }) => (
+              <span key={id}>{" " + name + "  "} </span>
+            ))}
+            &#8728;
+            <span>
               {movie?.release_date
                 ? " " + movie?.release_date.slice(0, 4)
                 : " " + movie?.first_air_date.slice(0, 4)}
