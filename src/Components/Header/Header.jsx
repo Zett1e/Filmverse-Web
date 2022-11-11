@@ -8,7 +8,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import { stack as Menu } from "react-burger-menu";
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -65,20 +65,22 @@ function Header() {
   };
 
   if (isDark) {
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "#1c1c1c";
     document.body.style.color = "white";
   } else {
-    document.body.style.backgroundColor = "#ddd";
+    document.body.style.backgroundColor = "#bbb";
     document.body.style.color = "black";
   }
 
   return (
-    <div className="header">
+    <div
+      className="header"
+      style={{ backgroundColor: isDark ? "#1c1c1c" : "#bbb" }}
+    >
       <div className="left">
         <Menu>
-          
           <a id="home" className="menu-item" href="/">
-          <HomeOutlinedIcon className="icon" fontSize="large"/>
+            <HomeOutlinedIcon className="icon" fontSize="large" />
             Home
           </a>
           <a id="about" className="menu-item" href="/about">
@@ -92,13 +94,12 @@ function Header() {
           </a>
         </Menu>
         <div>
-
-        <img className="img" src={logo} alt="Logo" />
+          <img className="img" src={logo} alt="Logo" />
         </div>
       </div>
 
       <div className="right">
-        <SearchIcon className="search" sx={{ fontSize: 30 }} />
+        <SearchIcon className="search" style={{color: !isDark && 'gray'}} sx={{ fontSize: 30 }} />
         <FormControlLabel
           onClick={themeHandler}
           className="switch"

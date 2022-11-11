@@ -3,22 +3,22 @@
 
   .list-item {
     height: 36rem;
-    // margin-right: 3rem;
+    margin-right: 2rem;
+    cursor: pointer;
     
-     .title {
-      // margin-right: 2rem;
+    .title{
       font-size: 2rem;
       font-weight: 300;
-      text-align: center;
-     }
+    }
 
     &-img {
-      min-width: 20rem;
-      height: 30rem;
-      margin-right: 2rem;
+      // min-width: 20rem;
+      // height: 30rem;
+      
       border-radius: 1rem;
       overflow: hidden;
-      box-shadow: 0 10px 10px rgba(0, 0, 0,0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0,0.2);
     }
   }
 }
+

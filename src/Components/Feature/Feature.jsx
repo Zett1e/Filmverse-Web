@@ -12,6 +12,7 @@ function Feature() {
   const poster = "https://image.tmdb.org/t/p/original";
   const navigate = useNavigate();
 
+
   const api = () => {
     Api.get("/trending/all/day")
       .then((res) => {
@@ -26,6 +27,7 @@ function Feature() {
     api();
   }, []);
 
+
   return (
     <div className="hero ">
       <div className="row">
@@ -33,8 +35,8 @@ function Feature() {
           <div className="description">
             <div
               onClick={() => {
-                navigate("detail", {
-                  state: { id: trending[movie].id, type: "movie" },
+                navigate("/detail", {
+                  state: { id: trending[movie].id, type: trending[movie].media_type},
                 });
               }}
               className="title p-2"
@@ -58,7 +60,7 @@ function Feature() {
         <div className="col-6">
           <div
             onClick={() => {
-              navigate("detail", { state: { id: trending[movie.id] } });
+              navigate("detail", { state: { id: trending[movie].id,type: trending[movie].media_type } });
             }}
             style={{ cursor: "pointer" }}
           >

@@ -1,5 +1,5 @@
 .backdrop-container {
-  height: 100vh;
+  // height: 100vh;
 }
 
 .backdrop {
@@ -9,7 +9,7 @@
 }
 
 .logo {
-  height: 4rem;
+  height: 5rem;
   position: absolute;
   left: 5rem;
   top: 1rem;
@@ -19,20 +19,70 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 50%;
+  height: 75%;
   width: 100%;
-  background: linear-gradient(to top, black, transparent);
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) , rgba(30,30,30) 60% );
 }
 
 .content {
-  padding: 5rem 5rem;
+
   letter-spacing: 2px;
-  width: 60%;
+  width: 100%;
+  height: 100%;
+  padding: 0 15rem;
+  padding-top: 13rem;
+  display: flex;
+  justify-content: space-between;
+
+  .poster {
+    margin: 0;
+    height: 25rem;
+    border-radius: 10px;
+    
+  }
+
+  .poster-container {
+    width: 15%;
+    margin-right: 3rem;
+  }
+
+  .detail-container {
+    width: 55%;
+    margin-top: 45px;
+    padding-right: 4rem;
+
+    button{
+      color: #1c1c1c;
+      background-color: rgb(0, 255, 255);
+      height: 5rem;
+      width: 13rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      font-family: sans-serif;
+      outline: none;
+      border: none;
+      transition: all .1s;  
+      
+      &:hover {
+        background-color: rgb(0, 225, 255);
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+    
+  }
+
+
 
   h1 {
     font-family: "Anton", sans-serif;
     font-weight: 400;
     font-size: 3rem;
+    
   }
   span {
     font-size: 13px;

@@ -1,0 +1,32 @@
+.similar-container {
+  padding: 0 13rem;
+  .similar {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .slick-track {
+    height: 20rem;
+  }
+}
+
+.similar-item-container {
+  display: flex;
+
+  .similar-item {
+    cursor: pointer;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    &-img {
+      margin-right: 2rem;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+  }
+}
