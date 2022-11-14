@@ -3,7 +3,7 @@ import List from "./List";
 
 function AllList() {
   return (
-    <div>
+    <div style={{marginTop: '-10rem', position: 'relative', zIndex: '10'}}>
       <List title="Action" id="28" type='movie'></List>
       <List title="Adventure" id="12" type='movie'></List>
       <List title="Animation" id="16" type='movie'></List>

@@ -1,41 +1,50 @@
 @import "../../Sass/variable";
 
 .hero {
-    margin-top: 9rem;
-    margin-bottom: 3rem;
+  height: 100vh;
+  .backdrop-container {
+    height: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .content-container {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 75%;
+      width: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(30, 30, 30)
+      );
+    }
+  }
 }
 
 .poster {
-    display: block;
-    height: 40rem;
-    margin: 0 auto;
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  display: block;
+  height: 40rem;
+  margin: 0 auto;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
 }
 
 .description {
-    
-    margin-left: 5rem;
-    
-    
+  position: absolute;
+  top: 40%;
+  left: 0;
+  margin-left: 5rem;
 }
 
 .title {
-    font-size: 4rem;
-    font-weight: 900;
-    cursor: pointer;
+  font-size: 4rem;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .genre {
-    font-size: 2rem;
-    font-weight: 400;
-}
-
-.synopsis {
-    font-size: 2rem;
-    font-weight: 300;
-}
-
-.seemore {
-    font-size: 2rem;
-    font-weight: 400;
+  font-size: 1.8rem;
 }

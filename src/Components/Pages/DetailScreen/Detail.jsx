@@ -31,8 +31,6 @@ function Detail() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id, type]);
 
-  console.log(scrollToRef.current);
-
   return (
     <div style={{ backgroundColor: "rgba(30,30,30)" }}>
       <div style={{ position: "relative" }}>
