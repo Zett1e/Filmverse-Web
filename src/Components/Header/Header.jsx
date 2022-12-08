@@ -15,7 +15,6 @@ function Header() {
       <div className="right">
         <SearchIcon
           className="search"
-          style={{ color: "#ccc" }}
           sx={{ fontSize: 30 }}
         />
       </div>

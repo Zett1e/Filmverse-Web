@@ -25,6 +25,11 @@
   .right {
     .search {
       margin-right: 2.5rem;
+      cursor: pointer;
+      color: #ccc;
+      &:hover {
+        color: #fff
+      }
     }
 
     .switch {
