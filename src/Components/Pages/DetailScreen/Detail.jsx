@@ -34,9 +34,7 @@ function Detail() {
   return (
     <div style={{ backgroundColor: "rgba(30,30,30)" }}>
       <div style={{ position: "relative" }}>
-        <Link to="/">
-          <img className="logo" src={logo} alt="Logo" />
-        </Link>
+        
         <div className="backdrop-container">
           <img
             className="backdrop"

@@ -5,13 +5,11 @@ import Api from "../../Api";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useNavigate } from "react-router-dom";
 import { settings } from "../SliderSetting";
+import ItemCard from "./ItemCard";
 
 function List({ title, id, type }) {
   const [movie, setMovie] = useState([]);
-  const poster = "https://image.tmdb.org/t/p/original";
-  const navigate = useNavigate();
   let url;
 
   if (type === "movie") {
@@ -44,27 +42,8 @@ function List({ title, id, type }) {
           <Slider {...settings}>
             {movie.map((data,index) => {
               return (
-                <div className="list-item-container" key={index}>
-                  <div
-                    className="list-item"
-                    onClick={() => {
-                      navigate("/detail", {
-                        state: { id: data.id, type: type },
-                      });
-                    }}
-                  >
-                    <div className="list-item-img">
-                      <img
-                        className="w-100 h-100"
-                        src={poster + data.poster_path}
-                        alt="Movie poster"
-                      />
-                    </div>
-
-                    <p className="text-center pt-3 title" >
-                      {data?.title ? data?.title : data?.name}
-                    </p>
-                  </div>
+                <div className="list-item-container">
+                <ItemCard key={index} data={data} type={type} />
                 </div>
               );
             })}

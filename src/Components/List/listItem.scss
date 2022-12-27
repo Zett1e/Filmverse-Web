@@ -1,24 +1,22 @@
 .list-item-container {
-  display: flex;
+  margin-right: 2.5rem;
 
-  .list-item {
-    height: 36rem;
-    margin-right: 2rem;
-    cursor: pointer;
-    
-    .title{
-      font-size: 2rem;
-      font-weight: 300;
-    }
-
-    &-img {
-      // min-width: 20rem;
-      // height: 30rem;
-      
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0, 0, 0,0.2);
-    }
-  }
+  width: auto !important;
 }
 
+.list-item {
+  cursor: pointer;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  &-img {
+    width: 100%;
+
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}

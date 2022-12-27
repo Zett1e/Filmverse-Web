@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <div style={{ position: "relative" }}>
-        <Header />
+        
         <Feature />
       </div>
       <AllList />

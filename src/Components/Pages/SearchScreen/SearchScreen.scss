@@ -1,0 +1,18 @@
+.search {
+  &-screen {
+    
+    padding: 15rem 5rem 5rem 5rem;
+  }
+  &-container{
+    padding-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 8rem;
+  }
+}
+
+.itemcard-container {
+    height: 26rem;
+    width: 16rem;
+}
