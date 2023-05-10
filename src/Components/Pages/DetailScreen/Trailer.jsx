@@ -28,9 +28,9 @@ function Trailer({ id, type, scrollToRef }) {
   });
 
   return (
-    <div ref={scrollToRef} className="trailer-container pt-5">
-      <div className="trailer">
-        <h1 className="mb-5 ">Official Trailer</h1>
+    <div ref={scrollToRef} className="trailer-container pt-5 md:px-52">
+      <div className="trailer md:mx-auto mx-4 md:w-[60%]">
+        <h1 className="mb-5 text-3xl font-bold ">Official Trailer</h1>
         {trailerKey ? (
           <iframe
             src={`https://www.youtube.com/embed/${trailerKey}`}

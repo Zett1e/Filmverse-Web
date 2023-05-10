@@ -4,12 +4,17 @@ import "./listItem.scss";
 import Api from "../../Api";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { settings } from "../SliderSetting";
 import ItemCard from "./ItemCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import { FreeMode } from "swiper";
+import { useMediaQuery } from "@mui/material";
 
 function List({ title, id, type }) {
   const [movie, setMovie] = useState([]);
+  const smallMQuery = useMediaQuery("(max-width: 767px)");
   let url;
 
   if (type === "movie") {
@@ -32,22 +37,30 @@ function List({ title, id, type }) {
     api();
   }, [id]);
 
- 
-
   return (
-    <div className="list">
-      <div className="genre-title">{title}</div>
+    <div className="list md:ml-6">
+      <div className="genre-title md:ml-12 ml-6">{title}</div>
       <div className="list_wrapper">
-        <div className="list_container">
-          <Slider {...settings}>
-            {movie.map((data,index) => {
+        <div className="mx-6 md:mx-8">
+          <Swiper
+            slidesPerView={smallMQuery ? 3 : 7}
+            spaceBetween={30}
+            freeMode={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[FreeMode]}
+            className="mySwiper"
+          >
+           
+            {movie.map((data, index) => {
               return (
-                <div className="list-item-container">
-                <ItemCard key={index} data={data} type={type} />
-                </div>
+                <SwiperSlide>
+                  <ItemCard key={index} data={data} type={type} />
+                </SwiperSlide>
               );
             })}
-          </Slider>
+          </Swiper>
         </div>
       </div>
     </div>

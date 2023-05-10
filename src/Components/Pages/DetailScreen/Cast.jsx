@@ -21,34 +21,37 @@ function Cast({ id, type }) {
     api();
   }, [id, type]);
   return (
-    <div className="cast-container">
-      <div style={{ height: "100%" }}>
-        <h2 style={{ fontFamily: "sans-serif", fontWeight: "200" }}>
-          Top Cast
-        </h2>
-        <div className="container">
-          {credit.map((data, index) => (
-            <div className="cast" key={index}>
-              {data?.profile_path ? (
+    <div className="h-full mt-10 md:mt-0">
+      <h2 style={{ fontFamily: "sans-serif" }} className="text-3xl font-bold">
+        Top Cast
+      </h2>
+      <div className="cast-list-container flex gap-x-5 md:block">
+        {credit.map((data, index) => (
+          <div className="cast md:flex items-center gap-x-5" key={index}>
+            {data?.profile_path ? (
+              <div className="w-20 h-20 md:inline-block ">
                 <img
-                  className="cast-profile"
+                  className="cast-profile w-full h-full object-cover"
                   src={poster + data?.profile_path}
                   alt="Cast Profile"
                 />
-              ) : (
-                <AccountCircleIcon
-                  style={{
-                    color: "#ccc",
-                    height: "50px",
-                    width: "50px",
-                    marginRight: "10px",
-                  }}
-                />
-              )}
-              <span className="cast-name"> {data.name} </span>
-            </div>
-          ))}
-        </div>
+              </div>
+            ) : (
+              <AccountCircleIcon
+                style={{
+                  color: "#ccc",
+                  height: "50px",
+                  width: "50px",
+                  marginRight: "10px",
+                }}
+              />
+            )}
+            <p className="cast-name md:inline-block text-center">
+              {" "}
+              {data.name}{" "}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -26,10 +26,10 @@ const SearchScreen = () => {
 
   return (
     <div className="search-screen">
-      <h1> Search For &nbsp; "{search}" </h1>
+      <h1 className="text-3xl font-bold"> Search For &nbsp; "{search}" </h1>
       <div className="search-container">
         {results?.map((result, index) => (
-            <div className="itemcard-container">
+            <div className="itemcard-container md:w-64 ">
 
           <ItemCard key={index} data={result} type={result.media_type} />
             </div>

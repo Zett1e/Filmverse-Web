@@ -7,7 +7,7 @@ const ItemCard = ({data,type}) => {
   return (
     
                   <div
-                    className="list-item"
+                    className="list-item "
                     onClick={() => {
                       navigate("/detail", {
                         state: { id: data.id, type: type },

@@ -1,9 +1,6 @@
 .similar-container {
-  padding: 0 13rem;
   .similar {
-    width: 60%;
     height: auto;
-    margin: 0 auto;
   }
 
   .slick-track {
@@ -24,7 +21,7 @@
     }
 
     &-img {
-      margin-right: 2rem;
+      // margin-right: 2rem;
       border-radius: 1rem;
       overflow: hidden;
     }

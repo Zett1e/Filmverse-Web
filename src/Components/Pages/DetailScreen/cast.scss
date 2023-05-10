@@ -1,9 +1,8 @@
 .cast-container {
-    width: 25%;
     margin-top: 45px;
   }
 
-.container {
+.cast-list-container {
     overflow: scroll;
     height: 90%;
     scrollbar-width: none;
@@ -16,11 +15,7 @@
 .cast{
     margin-top: 2rem;
     &-profile{
-        height: 5rem;
-        width: 5rem;
         border-radius: 50%;
-        object-fit: cover;
-        margin-right: 1rem;
         
     }
     

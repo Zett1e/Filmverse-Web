@@ -31,9 +31,10 @@ function Feature() {
         <img
           src={poster + trending[movie]?.backdrop_path}
           alt="Movie Backdrop"
+          className="object-cover"
         />
         <div className="content-container">
-          <div className="description">
+          <div className="description ml-6 md:ml-20">
             <div
               onClick={() => {
                 navigate("/detail", {

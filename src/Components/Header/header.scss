@@ -13,26 +13,13 @@
 
   .left {
     position: relative;
-    padding-left: 5rem;
     display: flex;
     justify-content: flex-start;
 
-    .img {
-      height: 5rem;
-      margin-left: -2rem;
-    }
   }
 
   .right {
-    .search-container {
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      background-color: #fff;
-      margin-right: 2.5rem;
-      border-radius: 1rem;
-      padding: .5rem 1rem;
-    }
+    
     input {
       border: none;
       outline: none;
@@ -42,7 +29,6 @@
     }
     
     .search {
-      // margin-right: 2.5rem;
       cursor: pointer;
       color: #111;
       &:hover {
